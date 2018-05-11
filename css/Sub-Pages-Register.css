@@ -1,0 +1,231 @@
+.main {
+    width: 990px;
+    height: 340px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-top: 3px solid #f90;
+    background: #fff;
+    padding: 55px 0;
+    line-height: 1.5;
+    position: relative;
+}
+.header{
+	width: 990px;
+	height: 90px;
+}
+.head_right_txt>div{
+	font-size: 18px;
+	color: #666;
+	font-weight: 500;
+}
+.advise{
+	margin-top:12px;
+}
+.hide-yes{
+	text-align: center;
+	font-size: 28px;
+	width: 380px;
+	line-height: 342px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	display: none;
+}
+.hide-yes>div{
+	display: inline-block;
+	overflow: hidden;
+	line-height: 76px;
+}
+.hide-yes a{
+	color: #f60;
+}
+.hide-yes i{
+	width: 65px;
+	height: 65px;
+	margin-left: 20px;
+	background: url(../img/sprite.png) no-repeat;
+}
+.reg-form {
+    width: 380px;
+    margin: 0 auto;
+}
+.reg-form .gift-pkg {
+    font-size: 14px;
+    line-height: 17px;
+    padding-left: 2px;
+    margin-bottom: 17px;
+}
+.reg-form .gift-pkg i {
+    float: left;
+    width: 19px;
+    height: 17px;
+    margin-right: 6px;
+    background: url(../img/sprite1.png) -75px -93px no-repeat;
+}
+.reg-form .gift-pkg em {
+    color: #f40;
+    font-weight: 400;
+}
+.reg-form .input-box {
+    width: 378px;
+    height: 38px;
+    border: 1px solid #ccc;
+    line-height: 38px;
+    margin-bottom: 25px;
+}
+.reg-form .input-box .title {
+    float: left;
+    width: 76px;
+    padding-left: 11px;
+    line-height: 37px;
+    color: #222;
+    font-weight: 500;
+}
+.reg-form .input-box .input-wrapper {
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 291px;
+}
+.reg-form .input-box .input-wrapper input {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    color: #333;
+    border: 0;
+    background: 0;
+}
+
+.reg-form .input-box .input-wrapper .placeholder {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: #cacaca;
+    cursor: text;
+}
+
+.reg-form .input-box .input-wrapper .ok {
+    display: none;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 11px;
+    right: 12px;
+    background: url(../img/sprite1.png) -120px -93px no-repeat;
+}
+.phone-field{
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+.reg-form .error-msg, .reg-form .password-rule {
+    height: 22px;
+    line-height: 22px;
+    margin: -25px 0 3px;
+    color: #999;
+    font-weight: 500;
+}
+.reg-form .input-box .input-wrapper .clear, .reg-form .input-box .input-wrapper .eye {
+    width: 20px;
+    height: 20px;
+    top: 9px;
+    right: 33px;
+    cursor: pointer;
+    position: absolute;
+    display: none;
+}
+.reg-form .input-box .input-wrapper .eye-plain {
+    background: url(../img/sprite1.png) -50px -93px no-repeat;
+}
+.reg-form .input-box .input-wrapper .eye-encrypt {
+    background: url(../img/sprite1.png) -25px -93px no-repeat;
+}
+
+.suggestion{
+	line-height: 22px;
+}
+
+.suggestion em{
+	color: #999;
+	font-weight: normal;
+}
+.suggestion a{
+	font-weight: 500;
+}
+.reg-form .items {
+    color: #666;
+    font-weight: 500;
+}
+.reg-form .items .accept-items {
+    float: left;
+    margin: 3px 1px 0 0;
+}
+
+button, input, select, textarea {
+    font-size: 100%;
+    outline: 0;
+}
+.reg-form .items a {
+    color: #222;
+}
+.reg-form .pls-accept-items {
+    color: red;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: -24px;
+    display: none;
+}
+.reg-form .submit-btn {
+    width: 100%;
+    line-height: 40px;
+    background: #f60;
+    font-size: 20px;
+    color: #fff !important;
+    margin: 24px 0 5px;
+    display: inline-block;
+    text-align: center;
+    font-weight: 500;
+}
+.reg-form .submit-btn:hover{
+	background: #f50;
+}
+.reg-form .enter-reg {
+    color: #f60;
+    font-size: 14px;
+    float: left;
+    height: 21px;
+    font-weight: 500;
+}
+.reg-form .enter-reg i {
+    float: left;
+    width: 17px;
+    height: 15px;
+    background: url(../img/sprite1.png) -141px -93px no-repeat;
+    margin: 3px 5px 0 0;
+}
+
+
+.hide{
+	display: none !important;
+}
+.show{
+	display: block !important;
+}
+.color{
+	color: red !important;
+}
+
+
+
+
+
+
+
+
+
+
+

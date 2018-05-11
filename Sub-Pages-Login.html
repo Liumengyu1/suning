@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>用户登录</title>
+		<link rel="shortcut icon" type="image/x-icon" href="//ssl.suning.com/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/Sub-Pages-Login.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="header container">
+			<a href="index.html" class="logo"><img src="img/head_logo.png" /></a>
+			<div class="head_right_txt">
+				<div style="margin-right:-100px;">
+					<div class="bind-phone">为确保您账户的安全及正常使用，依《网络安全法》相关要求，6月1日起会员账户需绑定手机。如您还未绑定，请尽快完成，感谢您的理解及支持！</div>
+				</div>
+				<a href="" class="advise fr"><i></i>我想对“登录”提意见</a>
+			</div>
+
+		</div>
+		<div class="main">
+			<div class="login-c">
+				<a href="#" class="single-link"></a>
+				<div class="login-form fr">
+					<div class="login-tab">
+						<a href="javascript:;" class="tab-item on tab-color">
+							<span>扫码登录</span>
+							<i class="tab-hide"></i>
+						</a>
+						<a href="javascript:;" class="tab-item">
+							<span>账户登录</span>
+							<i></i>
+						</a>
+					</div>
+					<div class="pc-login" style="display: none;">
+						<div class="username-login" style="padding: 0 24px;">
+							<div>
+								<div class="login-blank"></div>
+							</div>
+							<div class="username-box">
+								<div class="input-box input-focus">
+									<input type="text" value="">
+									<label>用户名/手机/邮箱/门店会员卡号</label>
+									<i class="icon username-icon"></i>
+									<i class="clear"></i>
+								</div>
+								<div class="email-list"></div>
+							</div>
+							<div class="password-box" style="margin-bottom: 10px;">
+								<div class="input-box input-focus">
+									<input type="password">
+									<label>密码</label>
+									<i class="eye eye-plain"></i>
+									<i class="eye eye-encrypt hide"></i>
+									<i class="icon password-icon"></i>
+									<i class="clear"></i>
+								</div>
+							</div>
+							<div class="check" style="overflow: hidden;">
+								<input type="checkbox" style="outline: none;float: left;" /><span style="float: left;margin-top: -2px;">&nbsp;记住密码</span>
+							</div>
+							<div class="login-help clearfix">
+								<a href="javascript:;" class="login-switch fl"><i></i>短信验证码登录</a>
+								<a href="javascript:;" class="forget-password fr">忘记密码？</a>
+							</div>
+							<a href="javascript:;" class="login-submit">登　录</a>
+						</div>
+					</div>
+					<div class="scan-login" style="display: block;">
+						<div class="scan-box clearfix">
+							<div class="qrcode">
+								<img src="img/qrLoginUuidGenerate.png" class="qrCodesId">
+							</div>
+							<div class="phone-scan" style="display: none;"></div>
+						</div>
+						<p class="open-app"><i></i>打开<a href=""><em>苏宁易购APP</em></a>扫码登录</p>
+					</div>
+					<div class="free-reg">
+						<a href="Sub-Pages-Register.html">免费注册 有惊喜 &gt;</a>
+					</div>
+					<div class="bind-login">
+						<span class="title">使用以下账号登录</span>
+						<div class="common clearfix">
+							<a href="javascript:;" class="qq"><i></i>QQ</a>
+							<a href="javascript:;" class="weixin"><i></i>微信</a>
+							<a href="javascript:;" class="yifubao"><i></i>易付宝</a>
+							<a href="javascript:;">门店会员卡</a>
+						</div>
+						<div class="more"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ng-s-footer sub">
+			<div class="ng-s-f-con">
+				<p class="ng-url-list">
+					<a href=""> 苏宁云商</a>
+					<span>|</span>
+					<a href="#">苏宁互联</a>
+					<span>|</span>
+					<a href="#">苏宁金融</a>
+					<span>|</span>
+					<a href="#">易付宝</a>
+					<span>|</span>
+					<a href="#">PPTV</a>
+					<span>|</span>
+					<a href="#">红孩子</a>
+					<span>|</span>
+					<a href="#">缤购 </a>
+					<span>|</span>
+					<a href="#">乐购仕</a>
+					<span>|</span>
+					<a href="#">苏宁物流</a>
+					<span>|</span>
+					<a href="#">苏宁美国</a>
+					<span>|</span>
+					<a href="#">苏宁香港</a>
+					<span>|</span>
+					<a href="#">手机苏宁</a>
+				</p>
+				<p class="ng-url-list">
+					<a href="#">关于苏宁易购</a>
+					<span>|</span>
+					<a href="#">联系我们</a>
+					<span>|</span>
+					<a href="#">诚聘英才</a>
+					<span>|</span>
+					<a href="#">供应商入驻</a>
+					<span>|</span>
+					<a href="#">苏宁联盟</a>
+					<span>|</span>
+					<a href="#">苏宁招标</a>
+					<span>|</span>
+					<a href="#">友情链接 </a>
+					<span>|</span>
+					<a href="#">法律申明</a>
+					<span>|</span>
+					<a href="#">用户体验提升计划</a>
+					<span>|</span>
+					<a href="#">股东会员认证</a>
+				</p>
+				<p class="ng-copyright">
+					Copyright? 2002-2017 ，苏宁云商集团股份有限公司版权所有
+					<a href="">苏ICP备10207551号-4</a>
+					<span> </span>
+					<a href="">苏B1-20130131</a>
+					<span> </span>
+					<a href="">苏B2-20130376</a>
+					<span> </span>
+					<a href="">苏B2-20130391</a> 出版物经营许可证新出发苏批字第A-243号
+				</p>
+				<div class="ng-authentication">
+					<a href="">
+						<img src="img/chengxin.png" />
+					</a>
+					<a href="">
+						<img src="img/unicom.png" />
+					</a>
+					<a href="">
+						<img src="img/dianxin.jpg" />
+					</a>
+					<a href="">
+						<img src="img/dianzi.png" />
+					</a>
+				</div>
+			</div>
+
+		</div>
+	</body>
+
+</html>
