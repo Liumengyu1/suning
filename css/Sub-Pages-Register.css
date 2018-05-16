@@ -8,6 +8,18 @@
     padding: 55px 0;
     line-height: 1.5;
     position: relative;
+    
+}
+.backGif{
+	background: url(../img/timg.gif) no-repeat;
+	width: 380px;
+    height: 342px;
+    margin: 0 auto;
+    position: absolute;
+    top: 100px;
+   	left: 50%;
+   	margin-left: -120px;
+   	z-index: 0;
 }
 .header{
 	width: 990px;
@@ -31,6 +43,8 @@
 	top: 50%;
 	transform: translate(-50%,-50%);
 	display: none;
+	z-index: 2;
+    background: #fff;
 }
 .hide-yes>div{
 	display: inline-block;
@@ -49,6 +63,9 @@
 .reg-form {
     width: 380px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    background: #fff;
 }
 .reg-form .gift-pkg {
     font-size: 14px;

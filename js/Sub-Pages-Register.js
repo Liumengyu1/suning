@@ -109,7 +109,7 @@ $(function() {
 	$('.submit-btn').click(function() {
 		if (nickName.test(nickVal) && phone.test(phoneVal) && pwd.test(pwdVal)) {
 			$('.reg-form').addClass('hide');
-			$('.hide-yes').addClass('show');
+			setTimeout(function(){$('.hide-yes').addClass('show');},1000);
 			$.cookie('cname',nickVal,{expires:0.5,path:'/'});
 			$.cookie('cpwd',pwdVal,{expires:0.5,path:'/'});
 			
