@@ -38,55 +38,74 @@ $(function() {
 
 	/*二维码*/
 	$('.scan-box').mouseenter(function() {
-		$('.scan-box').animate({
+		$('.scan-box').stop(true).animate({
 			marginLeft: '-130px'
 		}, 400, function() {
 			$('.phone-scan').css('display', 'block');
 		});
 
 	});
-	$('.scan-box').mouseleave(function() {
+	$('.scan-login').mouseleave(function() {
 		$('.phone-scan').css('display', 'none');
-		$('.scan-box').animate({
+		$('.scan-box').stop(true).animate({
 			marginLeft: 0
 		}, 400);
 
 	});
+	
 	/*判断账号密码是否正确*/
 	$('.login-submit').click(function() {
 		var name = $('.username-box input').val();
 		var pwd = $('.password-box input').val();
-		var cooName = $.cookie('name');
-		var cooPwd = $.cookie('pwd');
+		var cooName = $.cookie('cname');
+		var cooPwd = $.cookie('cpwd');
 		if (name == cooName && pwd == cooPwd) {
-			$.cookie('cooName2', cooName);
+			$.cookie('ccooName2',$.cookie('cname'),{expires:0.5,path:'/'});
 			open('index.html', '_self');
-			$.cookie('val', 0);
+			$.cookie('cval', 1,{expires:0.5,path:'/'});
+			$.cookie('cval2',1,{expires:0.5,path:'/'});
 			if ($('.check input').is(':checked')) {
-				$.cookie('check', 1);
+				$.cookie('ccheck', 1,{expires:0.5,path:'/'});
 			} else {
-				$.cookie('check', 2);
+				$.cookie('ccheck', 2,{expires:0.5,path:'/'});
 			}
 
 		} else {
 			$('.login-blank').html('账号或密码错误，请重新输入');
 		}
-
 	});
+	
 	/*记住密码*/
-	if ($.cookie('val') == 0) {
-		$('.username-box input').val($.cookie('name'));
+	if ($.cookie('cval') == 1) {
+		$('.username-box input').val($.cookie('cname'));
 		$('.username-box label').css('display', 'none');
-		if ($.cookie('check') == 1) {
+		if ($.cookie('ccheck') == 1) {
 			$('.check input').attr('checked', true);
-			$('.password-box input').val($.cookie('pwd'));
+			$('.password-box input').val($.cookie('cpwd'));
 			$('.password-box label').css('display', 'none');
 		}
-		if ($.cookie('check') == 2) {
+		if ($.cookie('ccheck') == 2) {
 			$('.check input').attr('checked', false);
 			$('.password-box input').val('');
 			$('.password-box label').css('display', 'block');
 		}
 	}
-
+	
+	
+	if($.cookie('cval2')==1){
+		$('.username-box input').val($.cookie('cname'));
+		$('.username-box label').css('display', 'none');
+	}else{
+		$('.username-box input').val('');
+		$('.username-box label').css('display', 'block');
+	}
+	/*$('.username-box input').val('');
+		$('.username-box label').css('display', 'block');*/
+	/*显示/隐藏密码*/
+	$('.ocu-showPwd').click(function(){
+		$('.ocu-showPwd').hide().siblings('input').attr('type','text').siblings('.ocu-hidePwd').show();
+	});
+	$('.ocu-hidePwd').click(function(){
+		$('.ocu-hidePwd').hide().siblings('input').attr('type','password').siblings('.ocu-showPwd').show();
+	});
 });

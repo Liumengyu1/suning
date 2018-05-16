@@ -3938,7 +3938,7 @@ em {
 	height: 156px;
 	padding: 20px 34px 0;
 	position: relative;
-	margin-bottom: 17px;
+	margin-bottom: 10px;
 }
 
 .login-form .scan-login .scan-box .phone-scan {
@@ -3993,3 +3993,34 @@ em {
 	line-height: 41px;
 	display: block;
 }
+.ng-fix-bar-left .cate-list dt{
+	line-height: 24px;
+}
+
+
+.ocu{
+	width: 20px;
+    height: 20px;
+    top: 9px;
+    right: 33px;
+    cursor: pointer;
+    position: absolute;
+}
+.ocu-showPwd{
+	background: url(../img/sprite1.png) -50px -93px no-repeat;
+}
+.ocu-hidePwd{
+	display: none;
+	background: url(../img/sprite1.png) -25px -93px no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+

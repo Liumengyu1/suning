@@ -22,12 +22,15 @@ $(function() {
 	var pwdVal = '';
 	$('.name-field input').blur(function() {
 		nickVal = $(this).val();
-		if (nickName.test(nickVal)) {
-			$(this).parent('.input-wrapper').parent('.clearfix').siblings('.error-msg').addClass('hide').removeClass('show').html('请输入昵称，长度4~8位');
-			$(this).siblings('.ok').addClass('show').removeClass('hide');
-			$('.name-field .error-msg').removeClass('color');
-		} else {
-			if (nickVal == '') {
+		if(nickVal.length < 4&&nickVal.length>1){
+			$('.name-field .error-msg').addClass('show').addClass('color').removeClass('hide').html('昵称格式不正确，请重新输入！');
+			$(this).siblings('.ok').addClass('hide').removeClass('show');
+		}else{
+			if (nickName.test(nickVal)) {
+				$(this).parent('.input-wrapper').parent('.clearfix').siblings('.error-msg').addClass('hide').removeClass('show').html('请输入昵称，长度4~8位');
+				$(this).siblings('.ok').addClass('show').removeClass('hide');
+				$('.name-field .error-msg').removeClass('color');
+			} else if (nickVal == '') {
 				$('.name-field .error-msg').addClass('show').addClass('color').removeClass('hide').html('昵称不能为空！');
 				$(this).siblings('.ok').addClass('hide').removeClass('show');
 			} else {
@@ -36,6 +39,7 @@ $(function() {
 			}
 		}
 	});
+	
 	$('.phone-field input').blur(function() {
 		phoneVal = $(this).val();
 		if (phone.test(phoneVal)) {
@@ -101,13 +105,14 @@ $(function() {
 		}
 
 	});
-
+	
 	$('.submit-btn').click(function() {
 		if (nickName.test(nickVal) && phone.test(phoneVal) && pwd.test(pwdVal)) {
 			$('.reg-form').addClass('hide');
 			$('.hide-yes').addClass('show');
-			$.cookie('name',nickVal,{expires:1,path:'/'});
-			$.cookie('pwd',pwdVal,{expires:1,path:'/'});
+			$.cookie('cname',nickVal,{expires:0.5,path:'/'});
+			$.cookie('cpwd',pwdVal,{expires:0.5,path:'/'});
+			
 		} else {
 			if (nickVal == '') {
 				$('.name-field .error-msg').addClass('show').addClass('color').removeClass('hide').html('昵称不能为空！');
@@ -120,7 +125,6 @@ $(function() {
 			}
 		}
 	});
-
 })
 
 function stopBubble(e) {

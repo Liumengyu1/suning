@@ -108,62 +108,51 @@
 	});
 
 	/*banner*/
-	function banner(bannerLi, bannerLSpan, bannerBox, btnPre, btnNext) {
-		var n = 0;
-		var i = 0;
-		var bannerLi = $(bannerLi);
-		var bannerLSpan = $(bannerLSpan);
-		var bannerBox = $(bannerBox);
-		var btnPre = $(btnPre);
-		var btnNext = $(btnNext);
-		bannerLi.eq(0).addClass("move").siblings().removeClass("move");
-		bannerLSpan.eq(0).addClass("listHover").siblings().removeClass("listHover");
-		var timer = setInterval(change, 4000);
-
-		function change() {
-			n++;
-			if (n > 7) {
-				n = 0;
-			} else if (n < 0) {
-				n = 7;
-			}
-			bannerLi.eq(n).addClass("move").siblings().removeClass("move");
-			bannerLSpan.eq(n).addClass("listHover").siblings().removeClass("listHover");
-		};
-		bannerBox.mouseenter(function() {
-			clearInterval(timer);
-		});
-		bannerBox.mouseleave(function() {
-			timer = setInterval(change, 4000);
-		});
-		bannerLSpan.mouseenter(function() {
-			i = $(this).index();
-			n = i;
-			bannerLi.eq(i).addClass("move").siblings().removeClass("move");
-			$(this).addClass("listHover").siblings().removeClass("listHover");
-		});
-		btnPre.click(function() {
-			n--;
-			if (n > 7) {
-				n = 0;
-			} else if (n < 0) {
-				n = 7;
-			}
-			bannerLi.eq(n).addClass("move").siblings().removeClass("move");
-			bannerLSpan.eq(n).addClass("listHover").siblings().removeClass("listHover");
-		});
-		btnNext.click(function() {
-			change();
-		});
+	var timer = setInterval(move,4000);
+	var n=0;
+	var i=0;
+	$('.banner li').eq(0).addClass("move").siblings().removeClass("move");
+	$('.banner_list span').eq(0).addClass("listHover").siblings().removeClass("listHover");
+	function move(){
+		n++;
+		if(n>7){
+			n=0;
+		}
+		$('.banner li').eq(n).addClass('move').siblings().removeClass('move');
+		$('.banner_list span').eq(n).addClass('listHover').siblings().removeClass('listHover');
 	}
-	banner($(".banner li"), $(".banner_list span"), $(".banner_box"), $(".btn_prev"), $(".btn_next"));
+	$('.banner_list span').mouseenter(function(){
+		i = $(this).index();
+		$('.banner li').eq(i).addClass('move').siblings().removeClass('move');
+		$(this).addClass('listHover').siblings().removeClass('listHover');
+		n=i;
+	});
+	$('.banner').mouseenter(function(){
+		clearInterval(timer);
+	});
+	$('.banner').mouseleave(function(){
+		timer = setInterval(move,4000);
+	});
+	$('.btn_prev').click(function(){
+		n--;
+		if(n<0){
+			n=7;
+		}
+		$('.banner li').eq(n).addClass('move').siblings().removeClass('move');
+		$('.banner_list span').eq(n).addClass('listHover').siblings().removeClass('listHover');
+	});
+	$('.btn_next').click(function(){
+		move();
+	});
+
+
 
 	/*新闻滚动*/
 
 	var $swap = $('.toutiao ul');
 	var movetotop;
 	$swap.hover(function() {
-		clearInterval(movetotop);
+	 	clearInterval(movetotop);
 	}, function() {
 		movetotop = setInterval(function() {
 			var li_height = $swap.find('li').height();
@@ -282,23 +271,38 @@
 		$(this).children('.wrapper-hide').addClass('showWrapper');
 		$(this).siblings().children('.wrapper-hide').removeClass('showWrapper');
 	});
-
-	var str = $.cookie('cooName2');
-	$('.login-hide').css('display', 'none');
-	if (str != '') {
-		var length = str.length;
-		var len = length - 5;
-		var numStar = '*';
-		for (var i = 0; i < len - 1; i++) {
-			numStar = numStar + '*';
+	
+	if($.cookie('cval2')==1){
+		var str = $.cookie('ccooName2');
+		$('.login-hide').css('display', 'none');
+		if (str != '') {
+			
+	//		var length = str.length;/*获取字符串长度*/
+	//		var front = str.substring(0, 2);/*截取前两位*/
+	//		var after = str.substring(length, length - 2);/*截取后两位*/
+	//		var lCenter = str.substring(2,length-2);/*截取中间*/
+	//		var numStar = '*';
+	//		for (var i = 0; i < lCenter.length-1; i++) {/*循环截取中间几位数 转化成字符串*/
+	//			numStar = numStar + '*';
+	//		}
+	//		str = front + numStar + after;/*拼接*/
+			$('.user-infor .infor').html('Hi,' + str);
+			$('#denglu span').css('display', 'none');
+			$('.login-hide').css('display', 'block');
+			$('.login-hide .hoverli span').html(str);
 		}
-		var front = str.substring(0, 2);
-		var after = str.substring(length, length - 2);
-		str = front + numStar + after;
-		$('.user-infor .infor').html('Hi,' + str);
-		$('#denglu span').css('display', 'none');
-		$('.login-hide').css('display', 'block');
-		$('.login-hide .hoverli span').html(str);
+	}else{
+		$('.user-infor .infor').html('Hi,你好');
+		$('#denglu span').css('display', 'block');
+		$('.login-hide').css('display', 'none');
+		$('.login-hide .hoverli span').html('请登录');
 	}
-
+	/*$('.user-infor .infor').html('Hi,你好');
+	$('#denglu span').css('display', 'block');
+	$('.login-hide').css('display', 'none');
+	$('.login-hide .hoverli span').html('请登录');*/
 });
+$(function(){
+	$('.divWidth').width($('.liWidth').width()-2);
+	
+})
