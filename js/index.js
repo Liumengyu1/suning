@@ -189,7 +189,12 @@
 	})
 
 	$('.list').onePageNav();
-
+	var timer1 = setInterval(playnext,4000);
+	$('.module_content').mouseenter(function(){
+		clearInterval(timer1);
+	}).mouseleave(function(){
+		timer1 = setInterval(playnext,4000);
+	});
 	/*排行榜*/
 	var comBox = $('.commodity-wrapper'), //获取可视窗口
 		items = comBox.children(), //获取要滚动的元素
@@ -200,7 +205,7 @@
 		list = $('.banner-pager a');
 
 	comBox.prepend(items.last().clone()),
-		comBox.append(items.first().clone());
+	comBox.append(items.first().clone());
 	var newWidth = comBox.children().size();
 	comBox.css({
 		left: 0 - width,
@@ -213,6 +218,7 @@
 	pre.on('click', function() {
 		playpre();
 	})
+	
 	var curidx = 0; //声明初始的坐标
 	var mov = 1; //移动的次数
 	function playnext() {

@@ -55,23 +55,28 @@ $(function() {
 	
 	/*判断账号密码是否正确*/
 	$('.login-submit').click(function() {
-		var name = $('.username-box input').val();
-		var pwd = $('.password-box input').val();
-		var cooName = $.cookie('cname');
-		var cooPwd = $.cookie('cpwd');
-		if (name == cooName && pwd == cooPwd) {
-			$.cookie('ccooName2',$.cookie('cname'),{expires:0.5,path:'/'});
-			open('index.html', '_self');
-			$.cookie('cval', 1,{expires:0.5,path:'/'});
-			$.cookie('cval2',1,{expires:0.5,path:'/'});
-			if ($('.check input').is(':checked')) {
-				$.cookie('ccheck', 1,{expires:0.5,path:'/'});
+		if($.cookie('cyes')!=1){
+			var name = $('.username-box input').val();
+			var pwd = $('.password-box input').val();
+			var cooName = $.cookie('cname');
+			var cooPwd = $.cookie('cpwd');
+			if (name == cooName && pwd == cooPwd) {
+				$.cookie('ccooName2',$.cookie('cname'),{expires:0.5,path:'/'});
+				open('index.html', '_self');
+				$.cookie('cval', 1,{expires:0.5,path:'/'});
+				$.cookie('cval2',1,{expires:0.5,path:'/'});
+				$.cookie('cyes',1,{expires:0.5,path:'/'});
+				if ($('.check input').is(':checked')) {
+					$.cookie('ccheck', 1,{expires:0.5,path:'/'});
+				} else {
+					$.cookie('ccheck', 2,{expires:0.5,path:'/'});
+				}
+	
 			} else {
-				$.cookie('ccheck', 2,{expires:0.5,path:'/'});
+				$('.login-blank').html('账号或密码错误，请重新输入');
 			}
-
-		} else {
-			$('.login-blank').html('账号或密码错误，请重新输入');
+		}else{
+			$('.login-blank').html('此账号已登录！');
 		}
 	});
 	
@@ -115,5 +120,6 @@ function deleteCookieFunc(){
 	$.cookie('cval2',null,{expires:-1,path:'/'});
 	$.cookie('ccheck',null,{expires:-1,path:'/'});
 	$.cookie('ccooName2',null,{expires:-1,path:'/'});
+	$.cookie('cyes',null,{expires:-1,path:'/'});
 	alert('删除成功');
 }
