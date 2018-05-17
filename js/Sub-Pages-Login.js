@@ -99,8 +99,7 @@ $(function() {
 		$('.username-box input').val('');
 		$('.username-box label').css('display', 'block');
 	}
-	/*$('.username-box input').val('');
-		$('.username-box label').css('display', 'block');*/
+	/*deleteCookieFunc();*///清空cookie
 	/*显示/隐藏密码*/
 	$('.ocu-showPwd').click(function(){
 		$('.ocu-showPwd').hide().siblings('input').attr('type','text').siblings('.ocu-hidePwd').show();
@@ -109,3 +108,12 @@ $(function() {
 		$('.ocu-hidePwd').hide().siblings('input').attr('type','password').siblings('.ocu-showPwd').show();
 	});
 });
+function deleteCookieFunc(){
+	$.cookie('cname',null,{expires:-1,pathS:'/'});
+	$.cookie('cpwd',null,{expires:-1,path:'/'});
+	$.cookie('cval',null,{expires:-1,path:'/'});
+	$.cookie('cval2',null,{expires:-1,path:'/'});
+	$.cookie('ccheck',null,{expires:-1,path:'/'});
+	$.cookie('ccooName2',null,{expires:-1,path:'/'});
+	alert('删除成功');
+}

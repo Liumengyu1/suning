@@ -2,7 +2,7 @@ $(function() {
 
 	var nickName = /^[\u4e00-\u9fa5a-zA-Z0-9_]+$/;
 	var phone = /^1[34578]\d{9}$/;
-	var pwd = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z.]{8,16}$/;
+	var pwd = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z.]{6,16}$/;
 
 	$('body').css('height', '' + $(window).height() + '');
 
